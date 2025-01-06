@@ -4,6 +4,7 @@ use std::collections::HashMap;
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct ServiceConfig {
     pub autostart: Option<bool>,
+    #[serde(default)]
     #[serde(deserialize_with = "deserialize_autostop")]
     pub autostop: Option<AutostopEnum>,
     pub concurrency: Option<ConcurrencyConfig>,
